@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Curve Plot</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div>
+        <label for="functionSelect">Select a function: </label>
+        <select id="functionSelect">
+            <option value="Math.sin(x)">Sine (Math.sin(x))</option>
+            <option value="Math.cos(x)">Cosine (Math.cos(x))</option>
+            <option value="Math.exp(x)">Exponential (Math.exp(x))</option>
+            <option value="Math.log(x)">Logarithmic (Math.log(x))</option>
+            <option value="1 / (1 + Math.exp(-x))">Sigmoid (1 / (1 + Math.exp(-x)))</option>
+            <option value="Math.tanh(x)">Tanh (Math.tanh(x))</option>
+            <option value="Math.max(0, x)">ReLU (Math.max(0, x))</option>
+            <option value="Math.max(0.01 * x, x)">Leaky ReLU (Math.max(0.01 * x, x))</option>
+            <option value="x * (1 / (1 + Math.exp(-x)))">Swish (x * (1 / (1 + Math.exp(-x))))</option>
+            <option value="custom">Custom</option>
+        </select>
+        <input type="text" id="customFunctionInput" placeholder="Enter a custom function" style="display:none;">
+        <label for="xRange">X range: </label>
+        <input type="text" id="xRange" value="-10,10">
+        <label for="yRange">Y range: </label>
+        <input type="text" id="yRange" value="-10,10">
+        <button onclick="plotFunction()">Plot</button>
+    </div>
+    <div id="chart"></div>
+    <div id="tooltip" class="tooltip"></div>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
